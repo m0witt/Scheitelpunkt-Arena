@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Scheitelpunkt-Arena</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="kopf" id="kopf">
+  <button class="zurueck" id="btn-zurueck" hidden aria-label="Zurück zur Übersicht">‹</button>
+  <div class="rang">
+    <div class="rang-zeile"><strong id="rang-name">Parabel-Neuling</strong><span id="xp-text" class="klein">0 XP</span></div>
+    <div class="balken" aria-hidden="true"><div id="xp-balken"></div></div>
+  </div>
+  <div class="serie" id="serie" title="Serie richtiger Antworten"><span class="flamme" aria-hidden="true">🔥</span><span id="serie-zahl">0</span></div>
+</header>
+
+<main>
+  <!-- Übersicht -->
+  <section id="home">
+    <div class="intro">
+      <h1>Scheitelpunkt-Arena</h1>
+      <p>Wähle ein Spiel. Mit jeder richtigen Antwort sammelst du XP, baust deine Serie auf und schaltest neue Stufen frei.</p>
+    </div>
+    <div class="ziel">
+      <div class="ziel-zeile"><span>Tagesziel</span><strong id="ziel-text">0 / 20</strong></div>
+      <div class="balken"><div id="ziel-balken"></div></div>
+    </div>
+    <div id="karten" class="karten"></div>
+    <div class="fuss">
+      <button class="link" id="btn-badges">🏅 Abzeichen</button>
+      <button class="link" id="btn-merk">📘 Merkkasten</button>
+      <button class="link" id="btn-reset">Fortschritt löschen</button>
+    </div>
+  </section>
+
+  <!-- Aufgabe -->
+  <section id="aufgabe" hidden>
+    <div class="aufgaben-kopf">
+      <span id="a-modus" class="chip"></span>
+      <span id="a-stufe" class="chip chip-stufe"></span>
+      <span id="a-fortschritt" class="klein"></span>
+    </div>
+    <div class="karte" id="a-karte">
+      <p id="a-text" class="a-text"></p>
+      <div id="a-formel" class="a-formel"></div>
+      <div id="a-graph" class="a-graph"></div>
+      <div id="a-hinweise" class="hinweise" aria-live="polite"></div>
+      <div id="a-feedback" class="feedback" aria-live="polite"></div>
+    </div>
+    <div class="panel" id="panel">
+    <div id="a-eingabe" class="a-eingabe"></div>
+    <div class="aktionen" id="a-aktionen">
+      <button class="btn sek" id="btn-tipp">💡 Tipp</button>
+      <button class="btn prim" id="btn-pruefen">Prüfen</button>
+      <button class="btn sek" id="btn-loesung" hidden>Lösung zeigen</button>
+      <button class="btn prim" id="btn-weiter" hidden>Weiter ›</button>
+    </div>
+    <div class="tastatur" id="tastatur" hidden aria-label="Zahleneingabe"></div>
+    </div>
+  </section>
+</main>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<dialog id="dlg">
+  <div class="dlg-kopf"><h2 id="dlg-titel"></h2><button class="zu" id="dlg-zu" aria-label="Schließen">×</button></div>
+  <div id="dlg-inhalt"></div>
+</dialog>
+
+<script src="vendor/katex/katex.min.js"></script>
+<script src="js/math.js"></script>
+<script src="js/graph.js"></script>
+<script src="js/tasks.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
